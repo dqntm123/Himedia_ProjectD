@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject[] cameraObj;
     public bool right2 = false;
     public bool left2 = false;
+    public Transform myPos;
     public enum PLAYSTATE
     {
         NONE,
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
+        myPos = gameObject.transform;
         switch (playstate)
         {
             case PLAYSTATE.NONE:
