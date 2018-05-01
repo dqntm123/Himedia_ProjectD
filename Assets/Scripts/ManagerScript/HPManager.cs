@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CastleController : MonoBehaviour {
+public class HPManager : MonoBehaviour {
 
 	
-
 	void Start ()
     {
 		
 	}
+	
 
 	void Update ()
     {
