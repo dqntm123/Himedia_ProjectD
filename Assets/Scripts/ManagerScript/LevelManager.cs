@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour {
 
     public UILabel levelLabel;
-    public int expVaule;
-    public int levelVaule;
-    public int expLimit;
+    public float expVaule;
+    public float levelVaule;
+    public float expLimit;
+    public GameObject levelBar;
 	void Start ()
     {
 		
@@ -20,8 +21,9 @@ public class LevelManager : MonoBehaviour {
         {
             expVaule = 0;
             levelVaule += 1;
-            expLimit += 500;
+            levelBar.transform.localScale = new Vector3(360,0,360);
+            expLimit += 100;
         }
-        levelLabel.text = levelVaule.ToString();
+        levelLabel.text = "Lv."+levelVaule.ToString();
 	}
 }

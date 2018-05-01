@@ -7,10 +7,10 @@ public class GaugeScript : MonoBehaviour {
 
     public float coolTime1;
     public float coolTime2;
-    public int[] gaugeValue;
-    public int[] gaugeMaixmum;
+    public float[] gaugeValue;
+    public float[] gaugeMaixmum;
     public float[] limit;
-    public GameObject[] gaugeObj;
+    public GameObject[] gaugeBar;
     public UILabel[] countLabel;
     public bool beefOn =true;
     public bool manaOn = true;
@@ -37,6 +37,7 @@ public class GaugeScript : MonoBehaviour {
             {
                 coolTime1 = 0;
                 gaugeValue[0] += 1;
+                gaugeBar[0].transform.localScale += new Vector3(1/gaugeMaixmum[0]*360,0,0);
                 if(gaugeValue[0]>=gaugeMaixmum[0])
                 {
                     beefOn = false;
@@ -52,6 +53,7 @@ public class GaugeScript : MonoBehaviour {
             {
                 coolTime2 = 0;
                 gaugeValue[1] += 1;
+                gaugeBar[1].transform.localScale += new Vector3(1 / gaugeMaixmum[1] * 360, 0, 0);
                 if (gaugeValue[1] >= gaugeMaixmum[1])
                 {
                     manaOn = false;

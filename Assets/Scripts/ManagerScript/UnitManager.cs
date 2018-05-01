@@ -8,7 +8,8 @@ public class UnitManager : MonoBehaviour {
     public List<GameObject> unitMove;
     public GameObject[] enableChang;
     public GameObject gaugeMG;
-    public int[] unitVaule;
+    public float[] summonCost;
+    public float[] unitVaule;
     public float coolT;
     public float resPawnT;
     public bool unitIns = false;
@@ -54,7 +55,8 @@ public class UnitManager : MonoBehaviour {
     {
         if(gaugeMG.GetComponent<GaugeScript>().gaugeValue[0]>=unitVaule[0])
         {
-            gaugeMG.GetComponent<GaugeScript>().gaugeValue[0] -= 10;
+            gaugeMG.GetComponent<GaugeScript>().gaugeValue[0] -= summonCost[0];
+            gaugeMG.GetComponent<GaugeScript>().gaugeBar[0].transform.localScale -= new Vector3(summonCost[0]/gaugeMG.GetComponent<GaugeScript>().gaugeMaixmum[0]*360, 0,0);
             StartCoroutine(Unit1());
             unitIns = true;
             enableChang[0].GetComponent<UIButton>().enabled = false;

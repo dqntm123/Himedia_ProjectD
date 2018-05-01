@@ -5,7 +5,8 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour {
 
     public GameObject[] skill;
-    public int[] skillgauge;
+    public float[] skillgauge;
+    public float[] summonSkill;
     public GameObject gaugeManager;
 
     void Start()
@@ -17,7 +18,8 @@ public class SkillManager : MonoBehaviour {
         if(gaugeManager.GetComponent<GaugeScript>().gaugeValue[1]>=skillgauge[0])
         {
             Instantiate(skill[0], transform.position, transform.rotation);
-            gaugeManager.GetComponent<GaugeScript>().gaugeValue[1] -= 10;
+            gaugeManager.GetComponent<GaugeScript>().gaugeValue[1] -= summonSkill[0];
+            gaugeManager.GetComponent<GaugeScript>().gaugeBar[1].transform.localScale -= new Vector3(summonSkill[0] / gaugeManager.GetComponent<GaugeScript>().gaugeMaixmum[1]*360, 0, 0);
         }
     }
 }

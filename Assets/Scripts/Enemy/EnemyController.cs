@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
 
     public float enemySP;
     public GameObject lvManager;
-    public int exp;
+    public float exp;
 	public enum ENEMYSTATE
     {
         NONE,
@@ -42,6 +42,7 @@ public class EnemyController : MonoBehaviour {
         if(col.gameObject.tag=="Player")
         {
             lvManager.GetComponent<LevelManager>().expVaule += exp;
+            lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
             enemystate = ENEMYSTATE.DEAD;
         }
     }
