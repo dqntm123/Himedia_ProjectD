@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour {
 
 
     public float enemySP;
+    public GameObject lvManager;
+    public int exp;
 	public enum ENEMYSTATE
     {
         NONE,
@@ -16,9 +18,9 @@ public class EnemyController : MonoBehaviour {
 
     void Start()
     {
-        
+        lvManager = GameObject.Find("LevelManager");
     }
-    void Update ()
+    void Update()
     {
         switch (enemystate)
         {
@@ -39,6 +41,7 @@ public class EnemyController : MonoBehaviour {
     {
         if(col.gameObject.tag=="Player")
         {
+            lvManager.GetComponent<LevelManager>().expVaule += exp;
             enemystate = ENEMYSTATE.DEAD;
         }
     }

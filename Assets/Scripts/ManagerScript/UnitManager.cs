@@ -7,12 +7,15 @@ public class UnitManager : MonoBehaviour {
     public GameObject[] unitS;
     public List<GameObject> unitMove;
     public GameObject[] enableChang;
+    public GameObject gaugeMG;
+    public int[] unitVaule;
     public float coolT;
     public float resPawnT;
     public bool unitIns = false;
 
     void Start()
     {
+        gaugeMG = GameObject.Find("GaugeManager");
         unitMove = new List<GameObject>();
         Instantiate(unitS[0], transform.position, transform.rotation);
         unitMove.Add(GameObject.Find("Unit1(Clone)"));
@@ -49,9 +52,13 @@ public class UnitManager : MonoBehaviour {
     }
     public void UnitINS()
     {
-        StartCoroutine(Unit1());
-        unitIns = true;
-        enableChang[0].GetComponent<UIButton>().enabled = false;
-        enableChang[1].SetActive(true);
+        if(gaugeMG.GetComponent<GaugeScript>().gaugeValue[0]>=unitVaule[0])
+        {
+            gaugeMG.GetComponent<GaugeScript>().gaugeValue[0] -= 10;
+            StartCoroutine(Unit1());
+            unitIns = true;
+            enableChang[0].GetComponent<UIButton>().enabled = false;
+            enableChang[1].SetActive(true);
+        }
     }
 }

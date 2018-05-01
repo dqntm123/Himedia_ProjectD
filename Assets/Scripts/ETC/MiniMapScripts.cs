@@ -44,14 +44,6 @@ public class MiniMapScripts : MonoBehaviour {
             default:
                 break;
         }
-        //if(transform.localPosition.x>220)
-        //{
-        //    transform.localPosition = new Vector3(220,355,0);
-        //}
-        //if (transform.localPosition.x < -220)
-        //{
-        //    transform.localPosition = new Vector3(-220, 355, 0);
-        //}
     }
     public void RightMV()
     {
