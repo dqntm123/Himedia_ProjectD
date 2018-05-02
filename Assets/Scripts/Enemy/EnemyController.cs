@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour {
 
     public float enemySP;
     public GameObject lvManager;
+    public GameObject hpMG;
+    public float damage;
     public float exp;
 	public enum ENEMYSTATE
     {
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour {
     void Start()
     {
         lvManager = GameObject.Find("LevelManager");
+        hpMG = GameObject.Find("HPManager");
     }
     void Update()
     {
@@ -43,6 +46,7 @@ public class EnemyController : MonoBehaviour {
         {
             lvManager.GetComponent<LevelManager>().expVaule += exp;
             lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
+            hpMG.GetComponent<HPManager>().player.transform.localScale -= new Vector3(damage/ hpMG.GetComponent<HPManager>().playerHP*360, 0,0);
             enemystate = ENEMYSTATE.DEAD;
         }
     }

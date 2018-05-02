@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float speed;
-    public int playerHP;
     public GameObject[] cameraObj;
     public bool right2 = false;
     public bool left2 = false;
@@ -24,7 +23,6 @@ public class PlayerController : MonoBehaviour {
         cameraObj[0] = GameObject.Find("Main Camera");
         cameraObj[1] = GameObject.Find("MiniPlayer");
     }
-	
 	
 	void Update ()
     {

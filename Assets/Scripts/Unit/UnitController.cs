@@ -5,6 +5,8 @@ using UnityEngine;
 public class UnitController : MonoBehaviour {
 
     public float unitSpeed;
+    public float damage;
+    public GameObject hpManager;
     public enum UNITSTATE
     {
         NONE,
@@ -17,6 +19,7 @@ public class UnitController : MonoBehaviour {
     void Start()
     {
         unitstate = UNITSTATE.NONE;
+        hpManager = GameObject.Find("HPManager");
     }
     void Update()
     {
@@ -42,6 +45,7 @@ public class UnitController : MonoBehaviour {
     {
         if(col.gameObject.tag=="Castle")
         {
+            hpManager.GetComponent<HPManager>().castle.transform.localScale -= new Vector3(damage/hpManager.GetComponent<HPManager>().castleHP*360, 0, 0);
             unitstate = UNITSTATE.DEAD;
         }
     }

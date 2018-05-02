@@ -5,7 +5,13 @@ using UnityEngine;
 public class SkillOne : MonoBehaviour {
 
     public float bulletSP;
+    public float damage;
+    public GameObject hpMg;
 
+    void Start()
+    {
+        hpMg = GameObject.Find("HPManager");
+    }
 
     void Update()
     {
@@ -20,6 +26,7 @@ public class SkillOne : MonoBehaviour {
     {
         if (col.gameObject.tag == "Castle")
         {
+            hpMg.GetComponent<HPManager>().castle.transform.localScale -= new Vector3(damage / hpMg.GetComponent<HPManager>().castleHP*360, 0, 0);
             Destroy(gameObject);
         }
     }
