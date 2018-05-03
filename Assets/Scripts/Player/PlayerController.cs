@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public float speed;
     public GameObject[] cameraObj;
+    public GameObject hpMg;
     public bool right2 = false;
     public bool left2 = false;
     public Transform[] block;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     {
         cameraObj[0] = GameObject.Find("Main Camera");
         cameraObj[1] = GameObject.Find("MiniPlayer");
+        hpMg = GameObject.Find("HPManager");
     }
 	
 	void Update ()
@@ -75,10 +77,14 @@ public class PlayerController : MonoBehaviour {
                 }
                 break;
             case PLAYSTATE.DEAD:
-
+                Destroy(gameObject);
                 break;
             default:
                 break;
+        }
+        if (hpMg.GetComponent<HPManager>().playerGauge.transform.localScale.x <= 0)
+        {
+            playstate = PLAYSTATE.DEAD;
         }
     }
     void OnTriggerEnter(Collider col)

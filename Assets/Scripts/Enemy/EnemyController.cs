@@ -39,6 +39,10 @@ public class EnemyController : MonoBehaviour {
             default:
                 break;
         }
+        if(transform.position.x<=-2.2f)
+        {
+            enemystate = ENEMYSTATE.DEAD;
+        }
     }
     void OnTriggerEnter(Collider col)
     {
@@ -46,7 +50,7 @@ public class EnemyController : MonoBehaviour {
         {
             lvManager.GetComponent<LevelManager>().expVaule += exp;
             lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
-            hpMG.GetComponent<HPManager>().player.transform.localScale -= new Vector3(damage/ hpMG.GetComponent<HPManager>().playerHP*360, 0,0);
+            hpMG.GetComponent<HPManager>().playerGauge.transform.localScale -= new Vector3(damage/ hpMG.GetComponent<HPManager>().playerHP*360, 0,0);
             enemystate = ENEMYSTATE.DEAD;
         }
     }

@@ -53,5 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHP: 500
   castleHP: 500
+  playerGauge: {fileID: 0}
+  castleGauge: {fileID: 0}
   player: {fileID: 0}
   castle: {fileID: 0}

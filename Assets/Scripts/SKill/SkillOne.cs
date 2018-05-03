@@ -26,7 +26,7 @@ public class SkillOne : MonoBehaviour {
     {
         if (col.gameObject.tag == "Castle")
         {
-            hpMg.GetComponent<HPManager>().castle.transform.localScale -= new Vector3(damage / hpMg.GetComponent<HPManager>().castleHP*360, 0, 0);
+            hpMg.GetComponent<HPManager>().castleGauge.transform.localScale -= new Vector3(damage / hpMg.GetComponent<HPManager>().castleHP*360, 0, 0);
             Destroy(gameObject);
         }
     }

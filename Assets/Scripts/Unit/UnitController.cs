@@ -45,7 +45,7 @@ public class UnitController : MonoBehaviour {
     {
         if(col.gameObject.tag=="Castle")
         {
-            hpManager.GetComponent<HPManager>().castle.transform.localScale -= new Vector3(damage/hpManager.GetComponent<HPManager>().castleHP*360, 0, 0);
+            hpManager.GetComponent<HPManager>().castleGauge.transform.localScale -= new Vector3(damage/hpManager.GetComponent<HPManager>().castleHP*360, 0, 0);
             unitstate = UNITSTATE.DEAD;
         }
     }
