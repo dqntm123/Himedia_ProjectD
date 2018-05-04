@@ -7,6 +7,9 @@ public class UnitController : MonoBehaviour {
     public float unitSpeed;
     public float damage;
     public GameObject hpManager;
+    public GameObject effect;
+    public float attackCool;
+    public float attackResPawn;
     public enum UNITSTATE
     {
         NONE,
@@ -32,10 +35,16 @@ public class UnitController : MonoBehaviour {
                 transform.Translate(unitSpeed * Time.deltaTime, 0, 0);
                 break;
             case UNITSTATE.ATTACK:
-
+                attackCool += Time.deltaTime;
+                if(attackCool>=attackResPawn)
+                {
+                    Instantiate(effect,transform.position, transform.rotation);
+                    attackCool = 0;
+                }
                 break;
             case UNITSTATE.DEAD:
-                Destroy(gameObject);
+                gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
+                Destroy(gameObject,0.5f);
                 break;
             default:
                 break;
@@ -47,6 +56,8 @@ public class UnitController : MonoBehaviour {
         {
             hpManager.GetComponent<HPManager>().castleGauge.transform.localScale -= new Vector3(damage/hpManager.GetComponent<HPManager>().castleHP*360, 0, 0);
             unitstate = UNITSTATE.DEAD;
+            //gameObject.GetComponentInChildren<Animator>().SetBool("Attack", true);
+            //unitstate = UNITSTATE.ATTACK;
         }
     }
 }

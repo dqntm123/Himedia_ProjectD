@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour {
         switch (playstate)
         {
             case PLAYSTATE.NONE:
-                
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+                gameObject.GetComponentInChildren<Animator>().SetBool("Right", false);
                 break;
             case PLAYSTATE.RIGHT:
                 if(right2==false)
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour {
             case PLAYSTATE.LEFT:
                 if(left2==false)
                 {
-                    transform.Translate(-speed * Time.deltaTime, 0, 0);
+                    transform.Translate(speed * Time.deltaTime, 0, 0);
                     if (transform.position.x < -1.7f)
                     {
                         transform.position = new Vector3(-1.7f, 0.2f, -0.2f);
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     right2 = false;
                     cameraObj[0].GetComponent<MainCameraMove>().camerastate = MainCameraMove.CAMERASTATE.LEFT;
-                    transform.Translate(-speed * Time.deltaTime, 0, 0);
+                    transform.Translate(speed * Time.deltaTime, 0, 0);
                     if (transform.position.x < -1.7f)
                     {
                         transform.position = new Vector3(-1.7f, 0.2f, -0.2f);
@@ -101,13 +102,17 @@ public class PlayerController : MonoBehaviour {
     public void RightMove()
     {
         playstate=PLAYSTATE.RIGHT;
+        gameObject.GetComponentInChildren<Animator>().SetBool("Right", true);
     }
     public void LeftMove()
     {
         playstate = PLAYSTATE.LEFT;
+        transform.rotation = new Quaternion(0, -180, 0,0);
+        gameObject.GetComponentInChildren<Animator>().SetBool("Right", true);
     }
     public void NoneState()
     {
+        gameObject.GetComponentInChildren<Animator>().SetBool("Skill", false);
         playstate = PLAYSTATE.NONE;
         cameraObj[0].GetComponent<MainCameraMove>().camerastate = MainCameraMove.CAMERASTATE.NONE;
     }

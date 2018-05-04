@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9fb35421371087b4c94956a12c80ed98
+timeCreated: 1525312128
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 150
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Adobe Fan Heiti Std
+  fontNames:
+  - Adobe Fan Heiti Std
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

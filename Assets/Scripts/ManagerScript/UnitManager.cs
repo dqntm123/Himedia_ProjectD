@@ -46,7 +46,7 @@ public class UnitManager : MonoBehaviour {
     {
         unitMove[0].GetComponent<UnitController>().unitstate = UnitController.UNITSTATE.MOVE;
         unitMove.RemoveAt(0);
-        Instantiate(unitS[0], transform.position, transform.rotation);
+        Instantiate(unitS[0],transform.position, transform.rotation);
         unitMove.Add(GameObject.Find("Unit1(Clone)"));
         unitMove[0].name = "Unit1";
         yield return null;
