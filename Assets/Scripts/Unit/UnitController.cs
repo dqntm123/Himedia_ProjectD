@@ -44,7 +44,7 @@ public class UnitController : MonoBehaviour {
                 break;
             case UNITSTATE.DEAD:
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
-                Destroy(gameObject,0.5f);
+                Destroy(gameObject,0.65f);
                 break;
             default:
                 break;

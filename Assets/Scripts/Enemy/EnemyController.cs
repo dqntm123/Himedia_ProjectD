@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour {
                 lvManager.GetComponent<LevelManager>().expVaule += exp;
                 lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
-                Destroy(gameObject,0.5f);
+                Destroy(gameObject,0.65f);
                 break;
             default:
                 break;
