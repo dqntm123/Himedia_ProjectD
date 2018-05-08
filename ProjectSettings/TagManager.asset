@@ -5,11 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Castle
-  - Unit
-  - Enemy
   - Block2
   - Block1
   - Skill1
+  - Enemy1
+  - Unit1
   layers:
   - Default
   - TransparentFX

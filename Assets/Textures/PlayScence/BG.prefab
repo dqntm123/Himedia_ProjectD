@@ -53,48 +53,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 4f9873132ecffb74f92f8da8c5259da9, type: 2}
   mSprites:
-  - name: 02574739bab0385
-    x: 0
-    y: 10
-    width: 650
-    height: 243
+  - name: 512px-Remove_circle_font_awesome.svg
+    x: 481
+    y: 585
+    width: 440
+    height: 439
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: 1d3255fb4680870a8bdd7433200e48b0-d7bfe4v
-    x: 0
-    y: 1596
-    width: 1763
-    height: 452
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: ac4ad9ce3b3fc00d3235de42cb8ff12c
-    x: 0
-    y: 1051
-    width: 800
-    height: 544
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 30
+    paddingRight: 42
+    paddingTop: 38
+    paddingBottom: 35
   - name: arrow
-    x: 801
-    y: 1304
+    x: 922
+    y: 733
     width: 430
     height: 291
     borderLeft: 0
@@ -107,7 +81,7 @@ MonoBehaviour:
     paddingBottom: 77
   - name: Background copy
     x: 0
-    y: 555
+    y: 48
     width: 452
     height: 495
     borderLeft: 0
@@ -118,11 +92,24 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: c0079237_58ee39e9efdb6
+  - name: black-plus-2-512 copy
+    x: 922
+    y: 19
+    width: 202
+    height: 205
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 2
+    paddingBottom: 2
+  - name: Fairytale_button_cancel2.svg
     x: 0
-    y: 254
-    width: 600
-    height: 300
+    y: 544
+    width: 480
+    height: 480
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -131,11 +118,50 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: castle
-    x: 453
-    y: 674
-    width: 320
-    height: 376
+  - name: Gold Coin lr
+    x: 1125
+    y: 141
+    width: 77
+    height: 83
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 9
+    paddingTop: 8
+    paddingBottom: 9
+  - name: Icon2
+    x: 481
+    y: 51
+    width: 427
+    height: 190
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Icon3
+    x: 1353
+    y: 834
+    width: 427
+    height: 190
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: images
+    x: 1606
+    y: 546
+    width: 119
+    height: 119
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -145,8 +171,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Layer 1 copy
-    x: 1794
-    y: 1372
+    x: 1781
+    y: 801
     width: 245
     height: 223
     borderLeft: 0
@@ -157,9 +183,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: Layer 1 copy 1
+    x: 1353
+    y: 740
+    width: 244
+    height: 93
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Layer 2 copy
-    x: 601
-    y: 351
+    x: 1203
+    y: 275
     width: 193
     height: 203
     borderLeft: 0
@@ -170,9 +209,48 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 2
     paddingBottom: 2
+  - name: Layer 2 copy 1
+    x: 1598
+    y: 770
+    width: 150
+    height: 63
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Layer 21 copy
+    x: 481
+    y: 242
+    width: 423
+    height: 342
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: man_example
+    x: 1203
+    y: 84
+    width: 190
+    height: 190
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: normal
-    x: 1764
-    y: 1795
+    x: 922
+    y: 479
     width: 280
     height: 253
     borderLeft: 0
@@ -183,9 +261,22 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 1
     paddingBottom: 1
+  - name: Pause copy
+    x: 1484
+    y: 527
+    width: 121
+    height: 138
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 2
+    paddingBottom: 2
   - name: skill
-    x: 1764
-    y: 1728
+    x: 1484
+    y: 666
     width: 270
     height: 66
     borderLeft: 0
@@ -196,9 +287,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: undo_small
+    x: 1397
+    y: 398
+    width: 82
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 4
+    paddingTop: 5
+    paddingBottom: 5
   - name: unit11
-    x: 1764
-    y: 1614
+    x: 1726
+    y: 552
     width: 111
     height: 113
     borderLeft: 0
@@ -210,8 +314,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: x2
-    x: 1232
-    y: 1342
+    x: 922
+    y: 225
     width: 280
     height: 253
     borderLeft: 0
@@ -223,8 +327,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: x3
-    x: 1513
-    y: 1342
+    x: 1203
+    y: 479
     width: 280
     height: 253
     borderLeft: 0

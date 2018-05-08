@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114999912938577350}
   m_Layer: 0
   m_Name: Unit1
-  m_TagString: Unit
+  m_TagString: Unit1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,9 +125,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65964491365995294
 BoxCollider:
@@ -173,8 +173,10 @@ MonoBehaviour:
   damage: 10
   hpManager: {fileID: 0}
   effect: {fileID: 1601549121976710, guid: 1e9ccb3185a95cf488d6a1f9a3dc8f3e, type: 2}
+  enemy: {fileID: 0}
   attackCool: 0
   attackResPawn: 0.6
+  enemyIn: 1
   unitstate: 1
 --- !u!212 &212054727691438406
 SpriteRenderer:

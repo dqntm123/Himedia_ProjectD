@@ -8,10 +8,10 @@ public class StageManager : MonoBehaviour {
 	
     public void Stage1()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
     public void Stage2()
     {
-        SceneManager.LoadScene(2);
+        
     }
 }

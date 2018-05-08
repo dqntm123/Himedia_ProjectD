@@ -9,10 +9,12 @@ public class EnemyController : MonoBehaviour {
     public GameObject lvManager;
     public GameObject hpMG;
     public GameObject effect;
+    public GameObject unit;
     public float damage;
     public float exp;
     public float attackTime;
     public float attackResPawnTime;
+    public bool unitIn = true;
     public enum ENEMYSTATE
     {
         NONE,
@@ -36,6 +38,7 @@ public class EnemyController : MonoBehaviour {
                 transform.Translate(-enemySP * Time.deltaTime, 0, 0);
                 break;
             case ENEMYSTATE.ATTACK:
+                gameObject.GetComponentInChildren<Animator>().SetBool("Attack", true);
                 attackTime += Time.deltaTime;
                 if (attackTime >= attackResPawnTime)
                 {
@@ -44,8 +47,6 @@ public class EnemyController : MonoBehaviour {
                 }
                 break;
             case ENEMYSTATE.DEAD:
-                lvManager.GetComponent<LevelManager>().expVaule += exp;
-                lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
                 Destroy(gameObject,0.65f);
                 break;
@@ -56,15 +57,28 @@ public class EnemyController : MonoBehaviour {
         {
             enemystate = ENEMYSTATE.DEAD;
         }
+        if(unitIn==null)
+        {
+            unitIn = true;
+        }
     }
     void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.tag=="Player")
         {
             hpMG.GetComponent<HPManager>().playerGauge.transform.localScale -= new Vector3(damage / hpMG.GetComponent<HPManager>().playerHP * 360, 0, 0);
+            lvManager.GetComponent<LevelManager>().expVaule += exp;
+            lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
             enemystate = ENEMYSTATE.DEAD;
-            //gameObject.GetComponentInChildren<Animator>().SetBool("Attack", true);
             //enemystate = ENEMYSTATE.ATTACK;
+        }
+        if(unitIn==true)
+        {
+            if (col.gameObject.tag == "Unit1")
+            {
+                unit = col.gameObject;
+                enemystate = ENEMYSTATE.ATTACK;
+            }
         }
     }
 }

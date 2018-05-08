@@ -8,8 +8,10 @@ public class UnitController : MonoBehaviour {
     public float damage;
     public GameObject hpManager;
     public GameObject effect;
+    public GameObject enemy;
     public float attackCool;
     public float attackResPawn;
+    public bool enemyIn = true;
     public enum UNITSTATE
     {
         NONE,
@@ -32,9 +34,11 @@ public class UnitController : MonoBehaviour {
                 
                 break;
             case UNITSTATE.MOVE:
+                gameObject.GetComponentInChildren<Animator>().SetBool("Attack", false);
                 transform.Translate(unitSpeed * Time.deltaTime, 0, 0);
                 break;
             case UNITSTATE.ATTACK:
+                gameObject.GetComponentInChildren<Animator>().SetBool("Attack", true);
                 attackCool += Time.deltaTime;
                 if(attackCool>=attackResPawn)
                 {
@@ -49,6 +53,10 @@ public class UnitController : MonoBehaviour {
             default:
                 break;
         }
+        if(enemyIn==null)
+        {
+            enemyIn = true;
+        }
     }
     void OnTriggerEnter(Collider col)
     {
@@ -56,8 +64,16 @@ public class UnitController : MonoBehaviour {
         {
             hpManager.GetComponent<HPManager>().castleGauge.transform.localScale -= new Vector3(damage/hpManager.GetComponent<HPManager>().castleHP*360, 0, 0);
             unitstate = UNITSTATE.DEAD;
-            //gameObject.GetComponentInChildren<Animator>().SetBool("Attack", true);
             //unitstate = UNITSTATE.ATTACK;
+        }
+        if(enemyIn==true)
+        {
+            if (col.gameObject.tag == "Enemy1")
+            {
+                enemy = col.gameObject;
+                unitstate = UNITSTATE.ATTACK;
+                enemyIn = false;
+            }
         }
     }
 }
