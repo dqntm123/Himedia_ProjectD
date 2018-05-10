@@ -32,10 +32,6 @@ public class EnemyController : MonoBehaviour {
     }
     void Update()
     {
-        if (enemyHp <= 0)
-        {
-            enemystate = ENEMYSTATE.DEAD;
-        }
         switch (enemystate)
         {
             case ENEMYSTATE.NONE:
@@ -68,13 +64,17 @@ public class EnemyController : MonoBehaviour {
                 unitIn = true;
             }
         }
-        if(gameObject.transform.position.x<= -1.8f)
-        {
-            Destroy(gameObject);
-        }
         if (unitIn == true)
         {
             enemystate = ENEMYSTATE.NONE;
+        }
+        if (gameObject.transform.position.x<= -1.8f)
+        {
+            Destroy(gameObject);
+        }
+        if (enemyHp <= 0)
+        {
+            enemystate = ENEMYSTATE.DEAD;
         }
     }
     void OnTriggerEnter(Collider col)

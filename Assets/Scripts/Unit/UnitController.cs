@@ -29,10 +29,6 @@ public class UnitController : MonoBehaviour {
     }
     void Update()
     {
-        if (unitHp <= 0)
-        {
-            unitstate = UNITSTATE.DEAD;
-        }
         switch (unitstate)
         {
             case UNITSTATE.NONE:
@@ -71,6 +67,10 @@ public class UnitController : MonoBehaviour {
         if(enemyIn==true)
         {
             unitstate = UNITSTATE.MOVE;
+        }
+        if (unitHp <= 0)
+        {
+            unitstate = UNITSTATE.DEAD;
         }
     }
     void OnTriggerEnter(Collider col)

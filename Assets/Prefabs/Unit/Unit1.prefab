@@ -126,7 +126,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!65 &65964491365995294
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSpeed: 0.3
   damage: 10
-  unitHp: 80
+  unitHp: 75
   hpManager: {fileID: 0}
   effect: {fileID: 1601549121976710, guid: 1e9ccb3185a95cf488d6a1f9a3dc8f3e, type: 2}
   enemy: {fileID: 0}
