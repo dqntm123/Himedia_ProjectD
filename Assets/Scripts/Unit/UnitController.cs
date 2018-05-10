@@ -29,6 +29,10 @@ public class UnitController : MonoBehaviour {
     }
     void Update()
     {
+        if (unitHp <= 0)
+        {
+            unitstate = UNITSTATE.DEAD;
+        }
         switch (unitstate)
         {
             case UNITSTATE.NONE:
@@ -51,7 +55,7 @@ public class UnitController : MonoBehaviour {
             case UNITSTATE.DEAD:
                 unitSpeed = 0;
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
-                Destroy(gameObject,0.3f);
+                Destroy(gameObject,0.25f);
                 break;
             default:
                 break;
@@ -67,10 +71,6 @@ public class UnitController : MonoBehaviour {
         if(enemyIn==true)
         {
             unitstate = UNITSTATE.MOVE;
-        }
-        if(unitHp<=0)
-        {
-            unitstate = UNITSTATE.DEAD;
         }
     }
     void OnTriggerEnter(Collider col)

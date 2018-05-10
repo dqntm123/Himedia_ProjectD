@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour {
         if (cooltime > respawntime)
         {
             cooltime = 0;
+           // respawntime += 50f;
             enemy.name = "Enemy1";
             Instantiate(enemy, transform.position, transform.rotation);
         }

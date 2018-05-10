@@ -32,6 +32,10 @@ public class EnemyController : MonoBehaviour {
     }
     void Update()
     {
+        if (enemyHp <= 0)
+        {
+            enemystate = ENEMYSTATE.DEAD;
+        }
         switch (enemystate)
         {
             case ENEMYSTATE.NONE:
@@ -51,7 +55,7 @@ public class EnemyController : MonoBehaviour {
             case ENEMYSTATE.DEAD:
                 enemySP=0;
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
-                Destroy(gameObject, 0.3f);
+                Destroy(gameObject, 0.25f);
                 break;
             default:
                 break;
@@ -71,10 +75,6 @@ public class EnemyController : MonoBehaviour {
         if (unitIn == true)
         {
             enemystate = ENEMYSTATE.NONE;
-        }
-        if (enemyHp <= 0)
-        {
-            enemystate = ENEMYSTATE.DEAD;
         }
     }
     void OnTriggerEnter(Collider col)
