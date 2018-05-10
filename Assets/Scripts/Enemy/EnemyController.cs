@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
 
     public float enemySP;
+    public float enemyHp;
     public GameObject lvManager;
     public GameObject hpMG;
     public GameObject effect;
@@ -43,33 +44,47 @@ public class EnemyController : MonoBehaviour {
                 if (attackTime >= attackResPawnTime)
                 {
                     Instantiate(effect, transform.position, transform.rotation);
+                    unit.GetComponent<UnitController>().unitHp -= damage;
                     attackTime = 0;
                 }
                 break;
             case ENEMYSTATE.DEAD:
+                enemySP=0;
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
-                Destroy(gameObject,0.65f);
+                Destroy(gameObject, 0.3f);
                 break;
             default:
                 break;
         }
-        if(transform.position.x<=-2.2f)
+        if(unitIn==false)
+        {
+            enemystate = ENEMYSTATE.ATTACK;
+            if (unit.GetComponent<UnitController>().unitstate == UnitController.UNITSTATE.DEAD)
+            {
+                unitIn = true;
+            }
+        }
+        if(gameObject.transform.position.x<= -1.8f)
+        {
+            Destroy(gameObject);
+        }
+        if (unitIn == true)
+        {
+            enemystate = ENEMYSTATE.NONE;
+        }
+        if (enemyHp <= 0)
         {
             enemystate = ENEMYSTATE.DEAD;
-        }
-        if(unitIn==null)
-        {
-            unitIn = true;
         }
     }
     void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.tag=="Player")
         {
-            hpMG.GetComponent<HPManager>().playerGauge.transform.localScale -= new Vector3(damage / hpMG.GetComponent<HPManager>().playerHP * 360, 0, 0);
-            lvManager.GetComponent<LevelManager>().expVaule += exp;
-            lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
-            enemystate = ENEMYSTATE.DEAD;
+            //hpMG.GetComponent<HPManager>().playerGauge.transform.localScale -= new Vector3(damage / hpMG.GetComponent<HPManager>().playerHP * 360, 0, 0);
+            //lvManager.GetComponent<LevelManager>().expVaule += exp;
+            //lvManager.GetComponent<LevelManager>().levelBar.transform.localScale += new Vector3(0, exp / lvManager.GetComponent<LevelManager>().expLimit * 360, 0);
+            //enemystate = ENEMYSTATE.DEAD;
             //enemystate = ENEMYSTATE.ATTACK;
         }
         if(unitIn==true)
@@ -77,7 +92,7 @@ public class EnemyController : MonoBehaviour {
             if (col.gameObject.tag == "Unit1")
             {
                 unit = col.gameObject;
-                enemystate = ENEMYSTATE.ATTACK;
+                unitIn = false;
             }
         }
     }

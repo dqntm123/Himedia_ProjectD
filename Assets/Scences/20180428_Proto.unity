@@ -776,7 +776,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4481279018417130, guid: 7b8da956c8be458469052d6bc75e6de1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.6
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4481279018417130, guid: 7b8da956c8be458469052d6bc75e6de1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -891,6 +891,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114712756080217730, guid: b2742cf4c4351fc42b81e1b5d41792ba,
+        type: 2}
+      propertyPath: onClick.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4679122450411012, guid: b2742cf4c4351fc42b81e1b5d41792ba, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -988,6 +993,17 @@ Prefab:
       propertyPath: onRelease.Array.data[0].mTarget
       value: 
       objectReference: {fileID: 394587731}
+    - target: {fileID: 114712756080217730, guid: b2742cf4c4351fc42b81e1b5d41792ba,
+        type: 2}
+      propertyPath: onClick.Array.data[1].mTarget
+      value: 
+      objectReference: {fileID: 114999912938577350, guid: f71d82e5c20be7a42af8c9b49fbc85f3,
+        type: 2}
+    - target: {fileID: 114712756080217730, guid: b2742cf4c4351fc42b81e1b5d41792ba,
+        type: 2}
+      propertyPath: onClick.Array.data[1].mMethodName
+      value: SetAtive
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2742cf4c4351fc42b81e1b5d41792ba, type: 2}
   m_IsPrefabParent: 0

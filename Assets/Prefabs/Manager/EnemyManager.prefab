@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1509504582251318, guid: 894236803eb868341bffa850a95b743c, type: 2}
   cooltime: 0
-  respawntime: 3
+  respawntime: 4

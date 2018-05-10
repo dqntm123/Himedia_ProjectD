@@ -10,6 +10,7 @@ TagManager:
   - Skill1
   - Enemy1
   - Unit1
+  - item
   layers:
   - Default
   - TransparentFX

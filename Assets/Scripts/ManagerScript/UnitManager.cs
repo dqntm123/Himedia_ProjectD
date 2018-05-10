@@ -18,9 +18,9 @@ public class UnitManager : MonoBehaviour {
     {
         gaugeMG = GameObject.Find("GaugeManager");
         unitMove = new List<GameObject>();
-        Instantiate(unitS[0], transform.position, transform.rotation);
-        unitMove.Add(GameObject.Find("Unit1(Clone)"));
-        unitMove[0].name = "Unit1";
+        //Instantiate(unitS[0], transform.position, transform.rotation);
+        //unitMove.Add(GameObject.Find("Unit1(Clone)"));
+        //unitMove[0].name = "Unit1";
     }
     void Update()
     {
@@ -42,22 +42,23 @@ public class UnitManager : MonoBehaviour {
             }
         }   
     }
-    IEnumerator Unit1()
-    {
-        unitMove[0].GetComponent<UnitController>().unitstate = UnitController.UNITSTATE.MOVE;
-        unitMove.RemoveAt(0);
-        Instantiate(unitS[0],transform.position, transform.rotation);
-        unitMove.Add(GameObject.Find("Unit1(Clone)"));
-        unitMove[0].name = "Unit1";
-        yield return null;
-    }
+    //IEnumerator Unit1()
+    //{
+    //    unitMove[0].GetComponent<UnitController>().unitstate = UnitController.UNITSTATE.MOVE;
+    //    unitMove.RemoveAt(0);
+    //    Instantiate(unitS[0],transform.position, transform.rotation);
+    //    unitMove.Add(GameObject.Find("Unit1(Clone)"));
+    //    unitMove[0].name = "Unit1";
+    //    yield return null;
+    //}
     public void UnitINS()
     {
         if(gaugeMG.GetComponent<GaugeScript>().gaugeValue[0]>=unitVaule[0])
         {
             gaugeMG.GetComponent<GaugeScript>().gaugeValue[0] -= summonCost[0];
             gaugeMG.GetComponent<GaugeScript>().gaugeBar[0].transform.localScale -= new Vector3(summonCost[0]/gaugeMG.GetComponent<GaugeScript>().gaugeMaixmum[0]*360, 0,0);
-            StartCoroutine(Unit1());
+            Instantiate(unitS[0], transform.position, transform.rotation);
+            //StartCoroutine(Unit1());
             unitIns = true;
             enableChang[0].GetComponent<UIButton>().enabled = false;
             enableChang[1].SetActive(true);

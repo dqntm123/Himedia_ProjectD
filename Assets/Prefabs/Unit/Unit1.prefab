@@ -126,9 +126,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65964491365995294
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -139,7 +139,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 1}
+  m_Size: {x: 1, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95460663235742020
 Animator:
@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSpeed: 0.3
   damage: 10
+  unitHp: 80
   hpManager: {fileID: 0}
   effect: {fileID: 1601549121976710, guid: 1e9ccb3185a95cf488d6a1f9a3dc8f3e, type: 2}
   enemy: {fileID: 0}

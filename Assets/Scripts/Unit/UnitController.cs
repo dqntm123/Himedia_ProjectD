@@ -6,6 +6,7 @@ public class UnitController : MonoBehaviour {
 
     public float unitSpeed;
     public float damage;
+    public float unitHp;
     public GameObject hpManager;
     public GameObject effect;
     public GameObject enemy;
@@ -23,7 +24,7 @@ public class UnitController : MonoBehaviour {
 
     void Start()
     {
-        unitstate = UNITSTATE.NONE;
+        unitstate = UNITSTATE.MOVE;
         hpManager = GameObject.Find("HPManager");
     }
     void Update()
@@ -43,19 +44,33 @@ public class UnitController : MonoBehaviour {
                 if(attackCool>=attackResPawn)
                 {
                     Instantiate(effect,transform.position, transform.rotation);
+                    enemy.GetComponent<EnemyController>().enemyHp -= damage;
                     attackCool = 0;
                 }
                 break;
             case UNITSTATE.DEAD:
+                unitSpeed = 0;
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
-                Destroy(gameObject,0.65f);
+                Destroy(gameObject,0.3f);
                 break;
             default:
                 break;
         }
-        if(enemyIn==null)
+        if (enemyIn == false)
         {
-            enemyIn = true;
+            unitstate = UNITSTATE.ATTACK;
+            if (enemy.GetComponent<EnemyController>().enemystate == EnemyController.ENEMYSTATE.DEAD)
+            {
+                enemyIn = true;
+            }
+        }
+        if(enemyIn==true)
+        {
+            unitstate = UNITSTATE.MOVE;
+        }
+        if(unitHp<=0)
+        {
+            unitstate = UNITSTATE.DEAD;
         }
     }
     void OnTriggerEnter(Collider col)
@@ -71,7 +86,6 @@ public class UnitController : MonoBehaviour {
             if (col.gameObject.tag == "Enemy1")
             {
                 enemy = col.gameObject;
-                unitstate = UNITSTATE.ATTACK;
                 enemyIn = false;
             }
         }
