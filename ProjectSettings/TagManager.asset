@@ -11,6 +11,7 @@ TagManager:
   - Enemy1
   - Unit1
   - item
+  - Slot
   layers:
   - Default
   - TransparentFX

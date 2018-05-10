@@ -10,8 +10,9 @@ public class getButtonIndex : MonoBehaviour {
         bm = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
     }
 
-    void OnClick()
+   void OnClick()
     {
+        Debug.Log("HI");
         gameObject.AddChild(bm.selector);
         Destroy(bm.selector);
         bm.selector = gameObject.transform.GetChild(0).gameObject;
