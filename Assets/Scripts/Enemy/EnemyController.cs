@@ -49,9 +49,9 @@ public class EnemyController : MonoBehaviour {
                 }
                 break;
             case ENEMYSTATE.DEAD:
-                enemySP=0;
+                transform.Translate(enemySP * Time.deltaTime, 0, 0);
                 gameObject.GetComponentInChildren<Animator>().SetBool("Die", true);
-                Destroy(gameObject, 0.25f);
+                Destroy(gameObject, 0.6f);
                 break;
             default:
                 break;
